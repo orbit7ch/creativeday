@@ -353,6 +353,7 @@ else:
 RAVEN_DSN_JS = os.environ.get('RAVEN_DSN_JS', '')
 
 GOOGLE_TAG_MANAGER_CONTAINER_ID = os.environ.get('GOOGLE_TAG_MANAGER_CONTAINER_ID')
+GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 
 GRAPHENE = {
     'SCHEMA': 'api.schema.schema',

@@ -93,15 +93,15 @@ Vue.use(Vuetify, {
     VChip
   },
   theme: {
-    primary: '#3a2099',
-    secondary: '#fa6400'
+    primary: '#FF2768',
+    secondary: '#000'
   }
 })
 
 // Vue.component('tags-input', VoerroTagsInput)
 
 Vue.use(VueGtm, {
-  id: window.$gtm_id, // Your GTM ID
+  id: window.$gtmId, // Your GTM ID
   enabled: true, // defaults to true. Plugin can be disabled by setting this to false for Ex: enabled: !!GDPR_Cookie (optional)
   debug: debug,
   vueRouter: router
@@ -120,7 +120,7 @@ Vue.prototype.$getFilter = function () {
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyB4RBCUxLb9OsUTsc5p5h_Kl3D48shaKHk',
+    key: window.$googleApiKey,
     libraries: 'places'
   }
 })

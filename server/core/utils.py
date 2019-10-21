@@ -41,6 +41,11 @@ def get_random_secret(str_length=32):
 
 def overwrite_media_domain(url):
     if settings.OVERWRITE_MEDIA_DOMAIN:
-        return urlunparse(urlparse(url)._replace(netloc=settings.OVERWRITE_MEDIA_DOMAIN))
+        p = urlparse(url)
+        # replace s3 specific routes (e.g https://s3.eu-central-1.amazonaws.com/media.example.com/)
+        return urlunparse(
+            p._replace(netloc=settings.OVERWRITE_MEDIA_DOMAIN,
+                       path=p.path.replace('/{}'.format(settings.OVERWRITE_MEDIA_DOMAIN), ''))
+        )
 
     return url
