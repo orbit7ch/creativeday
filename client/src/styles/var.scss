@@ -1,0 +1,31 @@
+// color definitions
+
+$white: #ffffff;
+
+$dark-blue: #3a2099;
+$dark-blue-rgb: (8,49,58);
+$red: #fa6400;
+
+$light-grey: #cfcfcf;
+
+// color schema
+
+$black: rgba(0, 0, 0, 0.9);
+$primary: $dark-blue;
+$primary-variant: $dark-blue;
+
+$secondary: $red;
+$secondary-variant: $red;
+
+// text style
+$system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$text-color: $black;
+$font-family: 'Nunito Sans', $system-fonts;
+$heading-font-family: 'Nunito Sans', $system-fonts;
+$base-font-size: 14px;
+$background-color: #fafafa;
+
+$content-max-width: 860px;
+
+$placeholder-element-color: rgba(0,0,0, 0.1)
+

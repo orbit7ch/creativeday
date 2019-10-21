@@ -1,0 +1,147 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+#  restore_backup:
+#    build: .
+#    image: pcreativeday:local
+#    command: >
+#      bash -c "PGPASSWORD=postgres psql -U postgres --host=host.docker.internal -d postgres -c 'DROP SCHEMA public CASCADE; CREATE SCHEMA public;'
+#      && PGPASSWORD=postgres pg_restore -U postgres --host=host.docker.internal -d postgres < /root/data/data.bak || true
+#      && pipenv run python server/manage.py migrate
+#      && pipenv run python server/manage.py dummy_user
+#      && pipenv run python server/manage.py update_index"
+#    volumes:
+#      - ./data:/root/data
+#      - .:/root/code
+#    depends_on:
+#      - db
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
+    container_name: creativeday_elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.1
+    container_name: creativeday_kibana
+    environment:
+      - ELASTICSEARCH_URL=http://host.docker.internal:9200
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+
+  foundation:
+    build: .
+    image: creativeday:local
+    command: >
+      bash -c "pipenv run python server/manage.py dummy_data
+      && pipenv run python server/manage.py update_index"
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+      - elasticsearch
+
+  backend:
+    image: creativeday:local
+    command: bash -c "pipenv run python server/manage.py migrate && pipenv run python server/manage.py runserver 0.0.0.0:8000"
+    restart: always
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - elasticsearch
+      - kibana
+
+  web:
+    image: creativeday:local
+    command: bash -c "cd client && export HOST=0.0.0.0&& npm install && npm run dev"
+    volumes:
+      - .:/root/code
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+  shell:
+    image: creativeday:local
+    command: pipenv run python server/manage.py shell_plus
+    volumes:
+      - .:/root/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - elasticsearch
+
+  migrations:
+    image: creativeday:local
+    command: bash -c "pipenv run python server/manage.py makemigrations && pipenv run python server/manage.py migrate"
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+      - elasticsearch
+
+  dummy_data:
+    image: creativeday:local
+    command: bash -c "pipenv run python server/manage.py dummy_data && pipenv run python server/manage.py udpate_index"
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+      - elasticsearch
+
+  update_images:
+    image: creativeday:local
+    command: bash -c "pipenv run python server/manage.py update_images"
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+      - elasticsearch
+
+  update_index:
+    image: creativeday:local
+    command: bash -c "pipenv run python server/manage.py update_index"
+    volumes:
+      - .:/root/code
+    depends_on:
+      - db
+      - elasticsearch
+
+  bash:
+    image: creativeday:local
+    command: bash
+    volumes:
+       - .:/root/code
+    depends_on:
+      - db
+
+  build_client:
+    image: creativeday:local
+    command: bash -c "export NODE_ENV=production && npm install --prefix client && npm run build --prefix client"
+    volumes:
+      - .:/root/code

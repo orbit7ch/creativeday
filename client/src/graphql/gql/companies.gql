@@ -1,0 +1,16 @@
+query CompaniesQuerys {
+  companies {
+    id
+    url
+    name
+    bio
+    mainPortrait {
+      url200x200
+    }
+    operators {
+      mainPortrait {
+        url200x200
+      }
+    }
+  }
+}

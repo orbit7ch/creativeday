@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"INTERFACE","name":"Node","possibleTypes":[{"name":"PageNode"},{"name":"ImageNode"},{"name":"DocumentNode"}]},{"kind":"UNION","name":"BlogPageBody","possibleTypes":[{"name":"DefaultBlock"},{"name":"PageContentBlock"},{"name":"ImageBlock"},{"name":"HeroBlock"},{"name":"DocumentBlock"}]}]}}

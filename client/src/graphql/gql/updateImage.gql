@@ -1,0 +1,26 @@
+mutation UpdateImageById($input: UpdateImageInput!) {
+  updateImage(input: $input) {
+    tags {
+      name
+      slug
+    }
+    updatedImage {
+      pk
+      id
+      title
+      tagsList {
+        name
+        slug
+      }
+      rendition(
+      max: "800x800",
+      format: "jpeg"
+      ) {
+        url
+        width
+        height
+      }
+    }
+    errors
+  }
+}

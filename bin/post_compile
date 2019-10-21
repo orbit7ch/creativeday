@@ -1,0 +1,2 @@
+# Has to be in post_compile. Heroku release phase won't work :(
+python server/manage.py compress

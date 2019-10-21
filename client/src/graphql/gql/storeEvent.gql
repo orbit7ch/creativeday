@@ -1,0 +1,5 @@
+mutation StoreEvent($input: StoreEventInput!) {
+  storeEvent(input: $input) {
+    errors
+  }
+}

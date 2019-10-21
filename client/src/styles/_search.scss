@@ -1,0 +1,26 @@
+
+.search-field .v-input__slot {
+  border: 1px solid $light-grey !important;
+  padding: 5px 20px !important
+}
+
+.search-chip {
+  border-color: rgba($dark-blue, 0.5) !important;
+  height: 28px;
+
+  .v-icon {
+    color: rgba($dark-blue, 0.5) !important;
+    font-size: 18px;
+  }
+
+}
+
+.styles-heading {
+  font-weight: 400;
+  font-size: $base-font-size;
+}
+
+.search-term {
+  max-width: 80%;
+}
+

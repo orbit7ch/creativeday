@@ -1,0 +1,22 @@
+
+.text--white {
+  color: white;
+}
+
+.transparent-darken {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.white--text {
+  font-weight: 600;
+  letter-spacing: 0.05ch;
+}
+
+.theme--light.application {
+  background-color: $background-color;
+}
+
+.light-text {
+  color: rgba($white, 0.4s) !important;
+}
+

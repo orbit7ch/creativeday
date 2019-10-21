@@ -1,0 +1,8 @@
+query ServiceQuery($searchText: String!, $start: Int, $size: Int) {
+  serviceSearch(searchText: $searchText, start: $start, size: $size) {
+    image {
+      pk
+      url400x400
+    }
+  }
+}

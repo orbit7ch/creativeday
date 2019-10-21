@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+awscli = "*"
+django-cors-headers = "*"
+ipdb = "*"
+
+[packages]
+factory-boy = "*"
+wagtail_factories = {git = "https://github.com/mvantellingen/wagtail-factories.git", ref = "master"}
+django = "==2.0.6"
+whitenoise = "==4.0b4"
+psycopg2 = "==2.7.3.2"
+gunicorn = "==19.7.1"
+python-dotenv = "==0.7.1"
+dj-database-url = "==0.4.1"
+raven = "==6.3.0"
+django-extensions = "==1.9.8"
+graphene-django = "==2.0.0"
+django-filter = "==2.0.0.dev1"
+pillow = "==5.0.0"
+wagtail = "==2.2.2"
+django-cors-headers = "==2.2.0"
+django-storages = "*"
+boto3 = "*"
+instagram-scraper = "*"
+django-compressor = "*"
+django-libsass = "*"
+elasticsearch = ">=6.0.0,<6.3.1"
+python-intercom = "*"
+elasticsearch-dsl = "==6.2.1"
+openpyxl = "==2.5.8"
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.7"

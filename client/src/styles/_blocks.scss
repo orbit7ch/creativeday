@@ -1,0 +1,70 @@
+
+.heading--CENTER {
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+}
+
+.TilesBlock--image {
+  background-color: $placeholder-element-color;
+}
+
+.TilesBlock--image {
+  height: 150px !important;
+}
+
+.TextBlock, .text, .FormBlock {
+  h1, h2, h3, h4 {
+    padding-bottom: 16px;
+  }
+  max-width: 540px;
+  margin: auto;
+
+  &.text--left {
+    margin: initial;
+  }
+}
+
+.HerotextBlock--image {
+  height: 65vh;
+}
+
+.HerotextBlock--text i {
+  font-size: $base-font-size;
+  font-style: normal;
+  line-height: $base-font-size*1.5 !important;
+}
+
+.HerotextBlock--img-overlay {
+  background-image: linear-gradient(to bottom, rgba($dark-blue,0.8), rgba($dark-blue,0.6));
+}
+
+.HeroBlock--carousel, .HeroBlock--image {
+  max-height: 50vh;
+}
+
+.HerotextBlock--heading {
+  font-weight: 600;
+  max-width: 200px;
+}
+
+.TilesBlock--label {
+  text-align: left !important;
+  font-weight: 400;
+  color: $dark-blue;
+  padding: 2px 5px 5px 5px;
+  font-size: $base-font-size;
+
+  .v-icon {
+    font-size: 15px;
+    color: $dark-blue;
+  }
+
+}
+
+.TilesBlock--heading {
+  text-align: left !important;
+  font-weight: 400;
+  font-size: $base-font-size;
+  padding-left: 16px;
+}

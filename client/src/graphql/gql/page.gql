@@ -1,0 +1,84 @@
+query PagesQuery($slug: String) {
+  page(slug: $slug) {
+    title
+    id
+    headingAlignment
+    content {
+      ... on PageContentBlock {
+        page
+        value
+        blockType
+      }
+      ... on DefaultBlock {
+        value
+        blockType
+      }
+      ... on SearchBlock {
+        value
+        blockType
+        filters {
+          text
+          image {
+            pk
+            url200x200
+          }
+        }
+      }
+      ... on ButtonBlock {
+        value
+        blockType
+        pageUrl
+      }
+      ... on TextSearchBlock {
+        value
+        blockType
+        pageUrl
+      }
+      ... on DocumentBlock {
+        value
+        blockType
+        document {
+          url
+          title
+        }
+      }
+      ... on HeroBlock {
+        blockType
+        value
+        buttonPageUrl
+        slides {
+          text
+          image {
+            url
+          }
+        }
+        backgroundImage {
+          pk
+          url800x800
+        }
+      }
+      ... on ImageBlock {
+        blockType
+        value
+        image {
+          pk
+          url800x800
+        }
+      }
+      ... on ImageListBlock {
+        blockType
+        value
+        images {
+          label
+          searchText
+          pageUrl
+          image {
+            pk
+            url800x800
+            url400x400
+          }
+        }
+      }
+    }
+  }
+}

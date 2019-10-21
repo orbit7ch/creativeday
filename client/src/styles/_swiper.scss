@@ -1,0 +1,24 @@
+
+.swiper-button-prev, .swiper-button-next {
+  background: none;
+  &.swiper-button-disabled {
+    display: none;
+  }
+  top: 54%;
+}
+
+.swiper-button-prev {
+  left: 3px;
+}
+
+.swiper-button-next {
+  right: 22px;
+}
+
+.swiper-container {
+  padding-right: 30px;
+  .v-btn--floating.v-btn--small {
+    height: 30px;
+    width: 30px;
+  }
+}

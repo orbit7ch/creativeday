@@ -1,0 +1,13 @@
+query ServiceQuery($pk: String!) {
+  service(pk: $pk) {
+    image {
+      pk
+      url800x800
+      tags
+    }
+    similar {
+      pk
+      url800x800
+    }
+  }
+}

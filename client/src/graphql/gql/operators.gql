@@ -1,0 +1,22 @@
+query OperatorsQuery {
+  operators {
+    id
+    shortBio
+    pseudonym
+    fullName
+    url
+    mainPortrait {
+      url200x200
+    }
+    tags
+    portfolio {
+      ... on ImageBlock {
+        blockType
+        value
+        image {
+          url200x200
+        }
+      }
+    }
+  }
+}

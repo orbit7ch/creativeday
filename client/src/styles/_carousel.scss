@@ -1,0 +1,20 @@
+
+.v-carousel__controls__item {
+  margin: 0 !important;
+
+  .v-icon {
+    font-size: 12px !important;
+  }
+}
+
+.v-carousel__controls {
+  background-color: transparent;
+}
+
+.v-carousel {
+  box-shadow: none;
+}
+
+.v-btn--icon.v-btn--small {
+  width: 18px;
+}

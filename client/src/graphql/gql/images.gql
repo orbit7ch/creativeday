@@ -1,0 +1,27 @@
+query ImagesQuery($after:String, $before:String) {
+  tags {
+    name
+    slug
+  }
+
+  images(first: 100, after: $after, before: $before) {
+    edges {
+      node {
+        pk
+        id
+        title
+        tagsList {
+           name
+           slug
+        }
+        url800x800
+      }
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}

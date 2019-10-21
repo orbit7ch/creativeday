@@ -1,0 +1,17 @@
+{
+  "name": "creativeday",
+  "version": "1.0.1",
+  "description": "\"Heroku client build\"",
+  "scripts": {
+    "postinstall": "npm install --prefix client && npm run build --prefix client"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.3",
+    "npm": "^6.4.0",
+    "sass-loader": "^7.1.0"
+  },
+  "devDependencies": {}
+}

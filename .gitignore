@@ -1,0 +1,46 @@
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+dist/
+server/static/
+
+# C extensions
+*.so
+
+
+# npm/yarn
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Envs
+.env
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Backend
+staticfiles
+
+t.*
+tmp.*
+
+stats.html
+
+# Wagtail assets
+server/media/*
+
+esdata
+images

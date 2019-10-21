@@ -1,0 +1,54 @@
+query OperatorQuery($slug: String!) {
+  operator(slug: $slug) {
+    id
+    fullName
+    url
+    pseudonym
+    bio
+    tags
+    mainPortrait {
+      url800x800
+    }
+    portrait {
+      ... on ImageBlock {
+        blockType
+        value
+        image {
+          pk
+          url800x800
+        }
+      }
+    }
+    portfolio {
+      ... on ImageBlock {
+        blockType
+        value
+        image {
+          pk
+          url800x800
+          url400x400
+        }
+      }
+    }
+    reviews {
+      ... on DefaultBlock {
+        value
+      }
+    }
+    companies {
+      url
+      name
+      mainPortrait {
+        url200x200
+      }
+      bio
+      latitude
+      longitude
+      operators {
+        mainPortrait {
+          url200x200
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load staticfiles %}
+
+{% block extra_css %}
+    <style>
+
+        body {
+            color: #3F3F3F;
+        }
+
+        .logo {
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .logo:hover {
+            color: #fff
+        }
+
+        header, .page-explorer .listing .index, .tab-nav.merged {
+            background-color: #3F3F3F;
+        }
+
+        input[type=checkbox]:checked:before {
+            color: #fa6400;
+        }
+
+        a {
+            color: #fa6400;
+        }
+
+        a:hover {
+            color: #fa6400;
+        }
+
+        .nolink:hover {
+            color: #fa6400;
+        }
+
+        .listing .title h2 a:hover {
+            color: #fa6400;
+        }
+
+        .nav-main .menu-active > a {
+            border-left-color: #fa6400;
+        }
+
+        .tab-nav a {
+            background-color: #fa6400;
+            border-top: .3em solid #fa6400;
+        }
+
+        .tab-nav a:hover {
+            border-top-color: #fa6400;
+        }
+
+        .breadcrumb {
+            background-color: #333;
+        }
+
+        .breadcrumb li:hover {
+            background: #222;
+        }
+
+        .breadcrumb li a, .breadcrumb li span {
+            color: #fff;
+        }
+
+        .breadcrumb li a:after, .breadcrumb li span:after {
+            color: #fa6400;
+        }
+
+        .dropdown .dropdown-toggle {
+            background-color: #fa6400;
+        }
+
+        .dropdown .dropdown-toggle:hover, .dropdown.open .dropdown-toggle {
+            background-color: #fa6400;
+        }
+
+        .dropdown ul {
+            background-color: #fa6400;
+        }
+
+        .dropdown ul a:hover {
+            background-color: #fa6400;
+        }
+
+        .listing .children a {
+            color: #fa6400;
+        }
+
+        .listing td.children:hover, .listing tr:hover .children {
+            background-color: #fa6400;
+        }
+
+        .button, header .button {
+            background-color: #fa6400;
+            border: 1px solid #fa6400;
+        }
+
+        .button {
+            border-radius: 2px !important;
+        }
+
+        .button:hover, header .button:hover {
+            background-color: #fa6400;
+        }
+
+        .button-secondary, .listing .button-secondary, .t-default .u-btn-current {
+            border-color: #fa6400;
+            background-color: transparent;
+            color: #3F3F3F;
+        }
+
+        .button-secondary:hover, .t-default .u-btn-current:hover, .listing .button-secondary:hover {
+            background: #fa6400;
+            border-color: #fa6400;
+            color: #fff;
+        }
+
+        .t-inverted .u-btn-current:hover {
+            background-color: #fa6400;
+            border-color: #fa6400;
+        }
+
+        .page-explorer .listing .index .button:hover {
+            background-color: #fa6400;
+        }
+
+        .listing.chooser tbody tr:hover {
+            background-color: #fa6400;
+        }
+
+        .page-explorer .listing .index .button.bicolor {
+            background: #fa6400;
+        }
+
+        .page-explorer .listing .index .button {
+            border-color: #fa6400;
+        }
+
+        .teal, .icon.teal {
+            color: #fa6400;
+        }
+
+        .object > h2 {
+            background: #EDF7FA !important;
+        }
+
+        li.sequence-member:hover {
+            background: #EDF7FA !important;
+            border-color: #B6CCD4 !important;
+        }
+
+        .sequence-controls {
+            background-color: #EDF7FA !important;
+            border-color: #B6CCD4 !important;
+        }
+
+        .sequence-controls h3 label {
+            color: rgba(0, 0, 0, .55) !important;
+        }
+
+        .object > h2 label:before, .object > h2:before {
+            background-color: #B6CCD4 !important;
+        }
+
+        .halloeditor:focus, .tagit:focus, input:focus, select:focus, textarea:focus {
+            background-color: #EBF6EA;
+            border-color: #C6D9C4;
+        }
+
+
+    </style>
+{% endblock %}

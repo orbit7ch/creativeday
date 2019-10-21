@@ -1,0 +1,107 @@
+@import "materialize/materialize";
+
+$white: #fff;
+
+$grey-1: #F7F7F7;
+$grey-3: #F3F3F3;
+$grey-2: #D8D8D8;
+$grey-4: #AFB1B1;
+$grey-9: #3F3F3F;
+
+$light-white: rgba(255, 255, 255, 0.12);
+
+$dark-blue: #3a2099;
+$blue-shadow: #3a2099;
+$red: #fa6400;
+$blue: $dark-blue;
+
+$primary: $dark-blue;
+$accent: $red;
+$accent-shadow: $red;
+
+$red-shadow: darken($red, 20%);
+
+$text-color: $grey-9;
+$font-family: 'Montserrat', Arial, sans-serif;
+$base-font-size: 15px;
+
+$space: 10px;
+
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  color: $text-color;
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+
+h1 {
+  margin-top: 0px
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.dark-bg {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.alert {
+  padding: $space;
+}
+
+.alert-info {
+  border: 1px solid $blue-shadow;
+  background-color: $blue;
+  color: $text-color;
+}
+
+.alert-error {
+  border: 1px solid $red-shadow;
+  background-color: #cd3238;
+  color: #ffffff;
+}
+
+.btn-accent {
+  border: 1px solid $accent !important;
+  background-color: $accent;
+  border-radius: 2px;
+  color: $white;
+
+  &:hover, &:focus {
+    background-color: $accent-shadow;
+  }
+
+  box-shadow: none;
+}
+
+input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), select:not(.browser-default) {
+  width: 100%;
+  padding: $space;
+  margin: 8px 0;
+  display: inline-block;
+  //border: 1px solid $grey-4;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-color: $light-white;
+  //color: $white;
+}
+
+.mt-1 {
+  margin-top: $space;
+}
+
+.mb-1 {
+  margin-bottom: $space;
+}
+
+label {
+  font-size: 1rem;
+  color: $white;
+}

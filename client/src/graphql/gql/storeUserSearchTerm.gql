@@ -1,0 +1,5 @@
+mutation StoreUserSearchTerm($input: StoreUserSearchTermInput!) {
+  storeUserSearchTerm(input: $input) {
+    errors
+  }
+}
